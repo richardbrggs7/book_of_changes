@@ -5,12 +5,14 @@ use toml;
 
 #[derive(Deserialize, Serialize)]
 struct Hex {
+    utf : String,
     number : u16,
     lines : String,
     name : String,
     pinyin : String,
-    judgement : String,
-    judgement_comm : String,
+    preface : String,
+    judgment : String,
+    judgment_comm : String,
     image : String,
     image_comm : String,
     line_1 : String,
@@ -36,7 +38,12 @@ fn main() {
     let book_str = fs::read_to_string("./wilhelm_baynes.toml")
                      .expect("Could not open wilhelm_baynes.toml");
     let book : Changes = toml::from_str(&book_str).unwrap();
-    println!("{}", book.hexagram[0].judgement_comm);
+
+    for hex in &book.hexagram {
+        println!("{}: {}", hex.number, hex.name);
+    }
+    // println!("{}--------------", book.hexagram[0].judgement);
+    // println!("{}", book.hexagram[0].judgement_comm);
 
     // let t = Changes {
         // hexagram : vec![Hex{
