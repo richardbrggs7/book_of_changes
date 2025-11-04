@@ -1,5 +1,12 @@
-use serde::Deserialize;
-use serde::Serialize;
+#[cfg(test)]
+pub mod tests;
+
+// use rand::distr::Uniform;
+use rand::Rng;
+use serde::{
+    Deserialize,
+    Serialize
+};
 use std::fs;
 use toml;
 
@@ -34,63 +41,191 @@ struct Changes {
     hexagram : Vec<Hex>
 }
 
+fn yarrow() -> u8 {
+    let mut rng = rand::rng();
+    let draw = rng.random_range(1..=16);
+    if draw == 1 {
+        6
+    }
+    else if draw > 1 && draw <= 8 {
+        8
+    }
+    else if draw > 8 && draw <= 11 {
+        9
+    }
+    else if draw > 11 {
+        7
+    }
+    else {
+        0
+    }
+}
+
+fn make_hex() -> (String, String) {
+    let mut lines : String = String::new();
+    let mut moving : String = String::new();
+    let mut line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    line = yarrow();
+    if line == 6 {
+        lines.push('2');
+        moving.push('1');
+    }
+    else if line == 8 {
+        lines.push('2');
+        moving.push('0');
+    }
+    else if line == 9 {
+        lines.push('1');
+        moving.push('1');
+    }
+    else {
+        lines.push('1');
+        moving.push('0');
+    }
+    (lines, moving)
+}
+
 fn main() {
-    let book_str = fs::read_to_string("./wilhelm_baynes.toml")
+    let book_str = fs::read_to_string("./translations/wilhelm_baynes.toml")
                      .expect("Could not open wilhelm_baynes.toml");
     let book : Changes = toml::from_str(&book_str).unwrap();
 
-    for hex in &book.hexagram {
-        println!("{}: {}", hex.number, hex.name);
+    // Construct the hexagram
+    let lines : String;
+    let moving : String;
+    (lines, moving) = make_hex();
+    let mut moving_str = String::new();
+    if moving.chars().nth(0).unwrap() == '1' {
+        moving_str.push_str("one");
     }
-    // println!("{}--------------", book.hexagram[0].judgement);
-    // println!("{}", book.hexagram[0].judgement_comm);
+    if moving.chars().nth(1).unwrap() == '1' {
+        if !moving_str.is_empty() {
+            moving_str.push_str(", ");
+        }
+        moving_str.push_str("two");
+    }
+    if moving.chars().nth(2).unwrap() == '1' {
+        if !moving_str.is_empty() {
+            moving_str.push_str(", ");
+        }
+        moving_str.push_str("three");
+    }
+    if moving.chars().nth(3).unwrap() == '1' {
+        if !moving_str.is_empty() {
+            moving_str.push_str(", ");
+        }
+        moving_str.push_str("four");
+    }
+    if moving.chars().nth(4).unwrap() == '1' {
+        if !moving_str.is_empty() {
+            moving_str.push_str(", ");
+        }
+        moving_str.push_str("five");
+    }
+    if moving.chars().nth(5).unwrap() == '1' {
+        if !moving_str.is_empty() {
+            moving_str.push_str(", ");
+        }
+        moving_str.push_str("six");
+    }
+    if moving_str.is_empty() {
+        moving_str.push_str("none");
+    }
+    println!("Lines: {}\nMoving: {}", lines, moving);
 
-    // let t = Changes {
-        // hexagram : vec![Hex{
-                             // number : 1,
-                             // lines : "000000".to_string(),
-                             // name : "test".to_string(),
-                             // pinyin : "pin".to_string(),
-                             // judgement : "success".to_string(),
-                             // judgement_comm : "j comm".to_string(),
-                             // image : "good".to_string(),
-                             // image_comm : "good comm".to_string(),
-                             // line_1 : "line 1".to_string(),
-                             // line_1_comm : "line 1 comm".to_string(),
-                             // line_2 : "line 2".to_string(),
-                             // line_2_comm : "line 2 comm".to_string(),
-                             // line_3 : "line 3".to_string(),
-                             // line_3_comm : "line 3 comm".to_string(),
-                             // line_4 : "line 4".to_string(),
-                             // line_4_comm : "line 4 comm".to_string(),
-                             // line_5 : "line 5".to_string(),
-                             // line_5_comm : "line 5 comm".to_string(),
-                             // line_6 : "line 6".to_string(),
-                             // line_6_comm : "line 6 comm".to_string()
-                         // }, Hex {
-                             // number : 2,
-                             // lines : "111111".to_string(),
-                             // name : "test".to_string(),
-                             // pinyin : "pin".to_string(),
-                             // judgement : "success".to_string(),
-                             // judgement_comm : "j comm".to_string(),
-                             // image : "good".to_string(),
-                             // image_comm : "good comm".to_string(),
-                             // line_1 : "line 1".to_string(),
-                             // line_1_comm : "line 1 comm".to_string(),
-                             // line_2 : "line 2".to_string(),
-                             // line_2_comm : "line 2 comm".to_string(),
-                             // line_3 : "line 3".to_string(),
-                             // line_3_comm : "line 3 comm".to_string(),
-                             // line_4 : "line 4".to_string(),
-                             // line_4_comm : "line 4 comm".to_string(),
-                             // line_5 : "line 5".to_string(),
-                             // line_5_comm : "line 5 comm".to_string(),
-                             // line_6 : "line 6".to_string(),
-                             // line_6_comm : "line 6 comm".to_string()
-                         // }
-                        // ]
-    // };
-    // let ser = toml::to_string(&t).unwrap();
-    // println!("{}", ser);
+    // Find it
+    let hex = book.hexagram.into_iter().find(|x| x.lines == lines)
+                  .expect(&format!("Could not find hexagram matching lines {}",
+                                   lines));
+
+    // Display info
+    println!("Hexagram number {}", hex.number);
+
+    println!("{} ({}): {}", hex.utf, hex.pinyin, hex.name);
+    println!("Moving lines: {}", moving_str);
+
 }
