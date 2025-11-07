@@ -380,7 +380,7 @@ The name of the hexagram, zhūn, really connotes a blade of grass pushing \
 against an obstacle as it sprouts out of the earth — hence the meaning, \
 “difficulty at the beginning.” The hexagram indicates the way in which heaven \
 and earth bring forth individual beings. It is their first meeting, which is \
-beset with difficulties. The lower trigram qián is the Arousing; its motion is \
+beset with difficulties. The lower trigram zhèn is the Arousing; its motion is \
 upward and its image is thunder. The upper trigram kǎn stands for the \
 Abysmal, the dangerous. Its motion is downward and its image is rain. The \
 situation points to teeming, chaotic profusion; thunder and rain fill the air. \
@@ -2151,7 +2151,7 @@ pinyin = "yù"
 preface = """
 The strong line in the fourth place, that of the leading official, meets with \
 response and obedience from all the other lines, which are all weak. The \
-attribute of the upper trigram, qián, is movement; the attributes of kūn, the \
+attribute of the upper trigram, zhèn, is movement; the attributes of kūn, the \
 lower, are obedience and devotion. This begins a movement that meets with \
 devotion and therefore inspires enthusiasm, carrying all with it. Of great \
 importance, furthermore, is the law of movement along the line of least \
@@ -2302,7 +2302,7 @@ lines = "122112"
 name = "Following"
 pinyin = "suí"
 preface = """
-The trigram duì, the Joyous, whose attribute is gladness, is above; qián, the \
+The trigram duì, the Joyous, whose attribute is gladness, is above; zhèn, the \
 Arousing, which has the attribute of movement, is below. Joy in movement \
 induces following. The Joyous is the youngest daughter, while the Arousing is \
 the eldest son. An older man defers to a young girl and shows her \
@@ -2433,7 +2433,7 @@ lines = "211221"
 name = "Work on What Has Been Spoiled (Decay)"
 pinyin = "gǔ"
 preface = """
-The Chinese character ku represents a bowl in whose contents worms are \
+The Chinese character gǔ represents a bowl in whose contents worms are \
 breeding. This means decay. It has come about because the gentle indifference \
 of the lower trigram has come together with the rigid inertia of the upper, \
 and the result is stagnation. Since this implies guilt, the conditions embody \
@@ -2847,7 +2847,7 @@ the way. To prevent permanent injury, vigorous measures must be taken at once. \
 Deliberate obstruction of this sort does not vanish of its own accord. \
 Judgment and punishment are required to deter or obviate it.
 However, it is important to proceed in the right way. The hexagram combines \
-lí, clarity, and qián, excitement. lí is yielding, qián is hard. Unqualified \
+lí, clarity, and zhèn, excitement. lí is yielding, zhèn is hard. Unqualified \
 hardness and excitement would be too violent in meting out punishment; \
 unqualified clarity and gentleness would be too weak. The two together create \
 the just measure. It is of moment that the man who makes the decisions \
@@ -3322,7 +3322,7 @@ lines = "122111"
 name = "Innocence (The Unexpected)"
 pinyin = "wú wàng"
 preface = """
-qián, heaven, is above; qián, movement, is below. The lower trigram qián is \
+qián, heaven, is above; zhèn, movement, is below. The lower trigram zhèn is \
 under the influence of the strong line it has received from above, from \
 heaven. When, in accord with this, movement follows the law of heaven, man is \
 innocent and without guile. His mind is natural and true, unshadowed by \
@@ -3915,7 +3915,7 @@ should only bog down deeper into the danger; disagreeable as it may be to \
 remain in such a situation, we must wait until a way out shows itself.
 """
 line_4 = """
-A jug of wine, a bowl of rice1 with it;
+A jug of wine, a bowl of rice with it;
 Earthen vessels
 Simply handed in through the window.
 There is certainly no blame in this.
@@ -4103,7 +4103,7 @@ masculine principle must seize the initiative and place itself below the \
 feminine principle.
 Just as the first part of the book I begins with the hexagrams of heaven and \
 earth, the foundations of all that exists, the second part begins with the \
-hexagrams of courtship and marriage, the foundations of all social relationship
+hexagrams of courtship and marriage, the foundations of all social relationship.
 """
 judgment = """
 Influence. Success.
@@ -4225,7 +4225,7 @@ lines = "211122"
 name = "Duration"
 pinyin = "héng"
 preface = """
-The strong trigram qián is above, the weak trigram xùn below. This hexagram is \
+The strong trigram zhèn is above, the weak trigram xùn below. This hexagram is \
 the inverse of the preceding one. In the latter we have influence, here we \
 have union as an enduring condition. The two images are thunder and wind, \
 which are likewise constantly paired phenomena. The lower trigram indicates \
@@ -4460,14 +4460,14 @@ without further thought. Such a clear path ahead always leads to the good.
 [[hexagram]]
 utf = "䷡"
 number = 34
-lines = "11122"
+lines = "111122"
 name = "The Power of the Great"
 pinyin = "dà zhuàng"
 preface = """
 The great lines, that is, the light, strong lines, are powerful. Four light \
 lines have entered the hexagram from below and are about to ascend higher. The \
-upper trigram is qián, the Arousing; the lower is qián, the Creative. qián \
-is strong, qián produces movement. The union of movement and strength gives \
+upper trigram is zhèn, the Arousing; the lower is qián, the Creative. qián \
+is strong, zhèn produces movement. The union of movement and strength gives \
 the meaning of THE POWER OF THE GREAT. The hexagram is linked with the second \
 month (March–April).
 """
@@ -7148,7 +7148,7 @@ lines = "112122"
 name = "The Marrying Maiden"
 pinyin = "guī mèi"
 preface = """
-Above we have qián, the eldest son, and below, duì, the youngest daughter. The \
+Above we have zhèn, the eldest son, and below, duì, the youngest daughter. The \
 man leads and the girl follows him in gladness. The picture is that of the \
 entrance of the girl into her husband’s house. In all, there are four \
 hexagrams depicting the relationship between husband and wife. xián, \
@@ -7294,7 +7294,7 @@ lines = "121122"
 name = "Abundance (Fullness)"
 pinyin = "fēng"
 preface = """
-Qián is movement; lí is flame, whose attribute is clarity. Clarity within, \
+zhèn is movement; lí is flame, whose attribute is clarity. Clarity within, \
 movement without — this produces greatness and abundance. The hexagram \
 pictures a period of advanced civilization. However, the fact that development \
 has reached a peak suggests that this extraordinary condition of abundance \
@@ -7326,7 +7326,7 @@ This hexagram has a certain connection with shì kè, BITING THROUGH (21), in \
 which thunder and lightning similarly appear together, but in the reverse \
 order. In BITING THROUGH, laws are laid down; here they are applied and \
 enforced. Clarity [lí] within makes it possible to investigate the facts \
-exactly, and shock [qián] without ensures a strict and precise carrying out of \
+exactly, and shock [zhèn] without ensures a strict and precise carrying out of \
 punishments.
 """
 line_1 = """
