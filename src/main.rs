@@ -28,12 +28,16 @@ const OPTIONS : [&str; 10] = ["Commentaries", "Preface", "Judgment", "Image",
                    tool")]
 struct Args {
     #[arg(short = 'p', long = "prompt", default_value_t = false, help = "Whether \
-            to prompt the user to ontinue with each section of the hexagram")]
+            to prompt the user to continue with each section of the hexagram")]
     prompt : bool,
 
     #[arg(short = 'x', long = "hex", default_value_t = 0, help = "Go directly \
-            to the this hexagram")]
+            to this hexagram")]
     hex : u8,
+
+    #[arg(short = 'l', long = "list", default_value_t = false, help = "List all \
+            hexagrams")]
+    list : bool,
 }
 
 #[derive(Deserialize, Serialize)]
@@ -189,6 +193,13 @@ fn main() {
                      .expect("Could not open wilhelm_baynes.toml");
     let book : Changes = toml::from_str(&book_str).unwrap();
 
+    if cli.list {
+        for hex in book.hexagram {
+            println!("{} {}: {}", hex.utf, hex.number, hex.name);
+        }
+        return;
+    }
+
     let moving : String;
     let large_hex : String;
     let mut moving_str = String::new();
@@ -260,7 +271,7 @@ fn main() {
         }
     }
 
-    println!("{} ({}): {}", hex.utf, hex.pinyin, hex.name);
+    println!("{} {}: {}", hex.utf, hex.pinyin, hex.name);
     if cli.hex == 0 {
         println!("Moving lines: {moving_str}");
     }
