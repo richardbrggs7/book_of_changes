@@ -1,7 +1,7 @@
 [[hexagram]]
 utf = "䷀"
 number = 1
-lines = "111111"
+lines = [1,1,1,1,1,1]
 name = "The Creative"
 pinyin  = "qián"
 preface = """
@@ -190,7 +190,7 @@ would follow.
 [[hexagram]]
 utf = "䷁"
 number = 2
-lines = "222222"
+lines = [2,2,2,2,2,2]
 name = "The Receptive"
 pinyin = "kūn"
 preface = """
@@ -372,7 +372,7 @@ a sign that in this unnatural contest both primal powers suffer injury.
 [[hexagram]]
 utf = "䷂"
 number = 3
-lines = "122212"
+lines = [1,2,2,2,1,2]
 name = "Difficulty at the Beginning"
 pinyin = "zhūn"
 preface = """
@@ -519,7 +519,7 @@ says of this line: “Bloody tears flow: one should not persist in this.”
 [[hexagram]]
 utf = "䷃"
 number = 4
-lines = "212221"
+lines = [2,1,2,2,2,1]
 name = "Youthful Folly"
 pinyin = "méng"
 preface = """
@@ -657,7 +657,7 @@ as its sole aim the establishment of public security and peace.
 [[hexagram]]
 utf = "䷄"
 number = 5
-lines = "111212"
+lines = [1,1,1,2,1,2]
 name = "Waiting (Nourishment)"
 pinyin = "xū"
 preface = """
@@ -792,7 +792,7 @@ often come in a form that at first seems strange to us.
 [[hexagram]]
 utf = "䷅"
 number = 6
-lines = "212111"
+lines = [2,1,2,1,1,1]
 name = "Conflict"
 pinyin = "sòng"
 preface = """
@@ -924,7 +924,7 @@ attacked again and again, and the result is conflict without end.
 [[hexagram]]
 utf = "䷆"
 number = 7
-lines = "212222"
+lines = [2,1,2,2,2,2]
 name = "The Army"
 pinyin = "shī"
 preface = """
@@ -1070,7 +1070,7 @@ power be abused.
 [[hexagram]]
 utf = "䷇"
 number = 8
-lines = "222212"
+lines = [2,2,2,2,1,2]
 name = "Holding Together (Union)"
 pinyin = "bǐ"
 preface = """
@@ -1220,7 +1220,7 @@ it is too late.
 [[hexagram]]
 utf = "䷈"
 number = 9
-lines = "111211"
+lines = [1,1,1,2,1,1]
 name = "The Taming Power of the Small"
 pinyin = "xiǎo xù"
 preface = """
@@ -1352,7 +1352,7 @@ any further, before the appropriate time has come, would lead to misfortune.
 [[hexagram]]
 utf = "䷉"
 number = 10
-lines = "112111"
+lines = [1,1,2,1,1,1]
 name = "Treading (Conduct)"
 pinyin = "lǚ"
 preface = """
@@ -1484,7 +1484,7 @@ what he is to expect.
 [[hexagram]]
 utf = "䷊"
 number = 11
-lines = "111222"
+lines = [1,1,1,2,2,2]
 name = "Peace"
 pinyin = "tài"
 preface = """
@@ -1629,7 +1629,7 @@ complete, and humiliation would be the result.
 [[hexagram]]
 utf = "䷋"
 number = 12
-lines = "222111"
+lines = [2,2,2,1,1,1]
 name = "Standstill (Stagnation)"
 pinyin = "pǐ"
 preface = """
@@ -1761,7 +1761,7 @@ world is to be put in order.
 [[hexagram]]
 utf = "䷌"
 number = 13
-lines = "121111"
+lines = [1,2,1,1,1,1]
 name = "Fellowship with Men"
 pinyin = "tóng rén"
 preface = """
@@ -1891,7 +1891,7 @@ without separate aims of our own.
 [[hexagram]]
 utf = "䷍"
 number = 14
-lines = "111121"
+lines = [1,1,1,1,2,1]
 name = "Possesion in Great Measure"
 pinyin = "dà yǒu"
 preface = """
@@ -2008,7 +2008,7 @@ there is nothing that would not further.”
 [[hexagram]]
 utf = "䷎"
 number = 15
-lines = "221222"
+lines = [2,2,1,2,2,2]
 name = "Modesty"
 pinyin = "qiān"
 preface = """
@@ -2145,7 +2145,7 @@ something forceful really be achieved.
 [[hexagram]]
 utf = "䷏"
 number = 16
-lines = "222122"
+lines = [2,2,2,1,2,2]
 name = "Enthusiasm"
 pinyin = "yù"
 preface = """
@@ -2298,7 +2298,7 @@ very favorable.
 [[hexagram]]
 utf = "䷐"
 number = 17
-lines = "122112"
+lines = [1,2,2,1,1,2]
 name = "Following"
 pinyin = "suí"
 preface = """
@@ -2429,7 +2429,7 @@ were regarded as sharing in the destiny of the ruling family.
 [[hexagram]]
 utf = "䷑"
 number = 18
-lines = "211221"
+lines = [2,1,1,2,2,1]
 name = "Work on What Has Been Spoiled (Decay)"
 pinyin = "gǔ"
 preface = """
@@ -2552,7 +2552,7 @@ for the future.
 [[hexagram]]
 utf = "䷒"
 number = 19
-lines = "112222"
+lines = [1,1,2,2,2,2]
 name = "Approach"
 pinyin = "lín"
 preface = """
@@ -2677,7 +2677,7 @@ humbling of himself is blameless.
 [[hexagram]]
 utf = "䷓"
 number = 20
-lines = "222211"
+lines = [2,2,2,2,1,1]
 name = "Contemplation (View)"
 pinyin = "guān"
 preface = """
@@ -2819,7 +2819,7 @@ realizes that knowing how to become free of blame is the highest good.
 [[hexagram]]
 utf = "䷔"
 number = 21
-lines = "122121"
+lines = [1,2,2,1,2,1]
 name = "Biting Through"
 pinyin = "shì kè"
 preface = """
@@ -2950,7 +2950,7 @@ to say, he is deaf to warnings. This obstinacy leads to misfortune.
 [[hexagram]]
 utf = "䷕"
 number = 22
-lines = "121221"
+lines = [1,2,1,2,2,1]
 name = "Grace"
 pinyin = "bì"
 preface = """
@@ -3066,7 +3066,7 @@ fitness of its form.
 [[hexagram]]
 utf = "䷖"
 number = 23
-lines = "222221"
+lines = [2,2,2,2,2,1]
 name = "Splitting Apart"
 pinyin = "bō"
 preface = """
@@ -3190,7 +3190,7 @@ a superior man.
 [[hexagram]]
 utf = "䷗"
 number = 24
-lines = "122222"
+lines = [1,2,2,2,2,2]
 name = "Return (The Turning Point)"
 pinyin = "fù"
 preface = """
@@ -3318,7 +3318,7 @@ is pictured here is blind obstinacy and the judgment that is visited upon it.
 [[hexagram]]
 utf = "䷘"
 number = 25
-lines = "122111"
+lines = [1,2,2,1,1,1]
 name = "Innocence (The Unexpected)"
 pinyin = "wú wàng"
 preface = """
@@ -3431,7 +3431,7 @@ be achieved.
 [[hexagram]]
 utf = "䷙"
 number = 26
-lines = "111221"
+lines = [1,1,1,2,2,1]
 name = "The Taming Power of the Great"
 pinyin = "dà xù"
 preface = """
@@ -3558,7 +3558,7 @@ honored by the ruler and whose principles now prevail and shape the world.
 [[hexagram]]
 utf = "䷚"
 number = 27
-lines = "122221"
+lines = [1,2,2,2,2,1]
 name = "The Corners of the Mouth"
 pinyin = "yí"
 preface = """
@@ -3698,7 +3698,7 @@ all others.
 [[hexagram]]
 utf = "䷛"
 number = 28
-lines = "211112"
+lines = [2,1,1,1,1,2]
 name = "Preponderance of the Great"
 pinyin = "dà guò"
 preface = """
@@ -3822,7 +3822,7 @@ may prevail. There are things that are more important than life.
 [[hexagram]]
 utf = "䷜"
 number = 29
-lines = "212212"
+lines = [2,1,2,2,1,2]
 name = "The Abysmal (Water)"
 pinyin = "kǎn"
 preface = """
@@ -3959,7 +3959,7 @@ criminal who sits shackled behind thorn-hedged prison walls.
 [[hexagram]]
 utf = "䷝"
 number = 30
-lines = "121121"
+lines = [1,2,1,1,2,1]
 name = "The Clinging (Fire)"
 pinyin = "lí"
 preface = """
@@ -4088,7 +4088,7 @@ severity, fails in its purpose.
 [[hexagram]]
 utf = "䷞"
 number = 31
-lines = "221112"
+lines = [2,2,1,1,1,2]
 name = "Influence (Wooing)"
 pinyin = "xián"
 preface = """
@@ -4221,7 +4221,7 @@ good or bad fortune.
 [[hexagram]]
 utf = "䷟"
 number = 32
-lines = "211122"
+lines = [2,1,1,1,2,2]
 name = "Duration"
 pinyin = "héng"
 preface = """
@@ -4338,7 +4338,7 @@ becomes a danger if it is dominant in places of authority.
 [[hexagram]]
 utf = "䷠"
 number = 33
-lines = "221111"
+lines = [2,2,1,1,1,1]
 name = "Retreat"
 pinyin = "dùn"
 preface = """
@@ -4460,7 +4460,7 @@ without further thought. Such a clear path ahead always leads to the good.
 [[hexagram]]
 utf = "䷡"
 number = 34
-lines = "111122"
+lines = [1,1,1,1,2,2]
 name = "The Power of the Great"
 pinyin = "dà zhuàng"
 preface = """
@@ -4576,7 +4576,7 @@ in time.
 [[hexagram]]
 utf = "䷢"
 number = 35
-lines = "222121"
+lines = [2,2,2,1,2,1]
 name = "Progress"
 pinyin = "jìn"
 preface = """
@@ -4695,7 +4695,7 @@ with whom there is no close connection, will lead to humiliation.
 [[hexagram]]
 utf = "䷣"
 number = 36
-lines = "121222"
+lines = [1,2,1,2,2,2]
 name = "Darkening of the Light"
 pinyin = "míng yí"
 preface = """
@@ -4818,7 +4818,7 @@ consumed the energy to which it owed its duration.
 [[hexagram]]
 utf = "䷤"
 number = 37
-lines = "121211"
+lines = [1,2,1,2,1,1]
 name = "The Family (The Clan)"
 pinyin = "jiā rén"
 preface = """
@@ -4966,7 +4966,7 @@ In a ruling position one must of his own accord assume responsibility.
 [[hexagram]]
 utf = "䷥"
 number = 38
-lines = "112121"
+lines = [1,1,2,1,2,1]
 name = "Opposition"
 pinyin = "kuí"
 preface = """
@@ -5101,7 +5101,7 @@ reaches its climax it changes over to its antithesis.
 [[hexagram]]
 utf = "䷦"
 number = 39
-lines = "221212"
+lines = [2,2,1,2,1,2]
 name = "Obstruction"
 pinyin = "jiǎn"
 preface = """
@@ -5225,7 +5225,7 @@ work of rescue.
 [[hexagram]]
 utf = "䷧"
 number = 40
-lines = "212122"
+lines = [2,1,2,1,2,2]
 name = "Deliverance"
 pinyin = "jiě"
 preface = """
@@ -5358,7 +5358,7 @@ fares who acts after he has made ready the means.”
 [[hexagram]]
 utf = "䷨"
 number = 41
-lines = "112221"
+lines = [1,1,2,2,2,1]
 name = "Decrease"
 pinyin = "sǔn"
 preface = """
@@ -5492,7 +5492,7 @@ a limited private advantage; it is a public good and available to everyone.
 [[hexagram]]
 utf = "䷩"
 number = 42
-lines = "122211"
+lines = [1,2,2,2,1,1]
 name = "Increase"
 pinyin = "yì"
 preface = """
@@ -5628,7 +5628,7 @@ be given to him. If no one is with him, those who would harm him draw near.”
 [[hexagram]]
 utf = "䷪"
 number = 43
-lines = "111112"
+lines = [1,1,1,1,1,2]
 name = "Break-through (Resoluteness)"
 pinyin = "guài"
 preface = """
@@ -5786,7 +5786,7 @@ new evil would arise from it.
 [[hexagram]]
 utf = "䷫"
 number = 44
-lines = "211111"
+lines = [2,1,1,1,1,1]
 name = "Coming to Meet"
 pinyin = "gòu"
 preface = """
@@ -5917,7 +5917,7 @@ bear the dislike of the masses with composure.
 [[hexagram]]
 utf = "䷬"
 number = 45
-lines = "222112"
+lines = [2,2,2,1,1,2]
 name = "Gathering Together (Massing)"
 pinyin = "cuì"
 preface = """
@@ -6055,7 +6055,7 @@ after all achieved.
 [[hexagram]]
 utf = "䷭"
 number = 46
-lines = "211222"
+lines = [2,1,1,2,2,2]
 name = "Pushing Upward"
 pinyin = "shēng"
 preface = """
@@ -6174,7 +6174,7 @@ harmful.
 [[hexagram]]
 utf = "䷮"
 number = 47
-lines = "212112"
+lines = [2,1,2,1,1,2]
 name = "Oppression (Exhaustion)"
 pinyin = "kùn"
 preface = """
@@ -6313,7 +6313,7 @@ firm decision, he masters the oppression.
 [[hexagram]]
 utf = "䷯"
 number = 48
-lines = "211212"
+lines = [2,1,1,2,1,2]
 name = "The Well"
 pinyin = "jǐng"
 preface = """
@@ -6452,7 +6452,7 @@ becomes.
 [[hexagram]]
 utf = "䷰"
 number = 49
-lines = "121112"
+lines = [1,2,1,1,1,2]
 name = "Revolution (Molting)"
 pinyin = "gé"
 preface = """
@@ -6590,7 +6590,7 @@ general stabilization on the basis of what is possible at the moment.
 [[hexagram]]
 utf = "䷱"
 number = 50
-lines = "211121"
+lines = [2,1,1,1,2,1]
 name = "The Caldron"
 pinyin = "dǐng"
 preface = """
@@ -6738,7 +6738,7 @@ wherefore all goes well.
 [[hexagram]]
 utf = "䷲"
 number = 51
-lines = "122122"
+lines = [1,2,2,1,2,2]
 name = "The Arousing (Shock, Thunder)"
 pinyin = "zhèn"
 preface = """
@@ -6865,7 +6865,7 @@ take this into account.
 [[hexagram]]
 utf = "䷳"
 number = 52
-lines = "221221"
+lines = [2,2,1,2,2,1]
 name = "Keeping Still, Mountain"
 pinyin = "gèn"
 preface = """
@@ -6996,7 +6996,7 @@ confers peace and good fortune in relation to every individual matter.
 [[hexagram]]
 utf = "䷴"
 number = 53
-lines = "221211"
+lines = [2,2,1,2,1,1]
 name = "Development (Gradual Progress)"
 pinyin = "jiàn"
 preface = """
@@ -7144,7 +7144,7 @@ up to him as an example.
 [[hexagram]]
 utf = "䷵"
 number = 54
-lines = "112122"
+lines = [1,1,2,1,2,2]
 name = "The Marrying Maiden"
 pinyin = "guī mèi"
 preface = """
@@ -7290,7 +7290,7 @@ marriage.
 [[hexagram]]
 utf = "䷶"
 number = 55
-lines = "121122"
+lines = [1,2,1,1,2,2]
 name = "Abundance (Fullness)"
 pinyin = "fēng"
 preface = """
@@ -7417,7 +7417,7 @@ his family that in the end he finds himself completely isolated.
 [[hexagram]]
 utf = "䷷"
 number = 56
-lines = "221121"
+lines = [2,2,1,1,2,1]
 name = "The Wanderer"
 pinyin = "lǚ"
 preface = """
@@ -7538,7 +7538,7 @@ i.e., his modesty and adaptability — evil will result.
 [[hexagram]]
 utf = "䷸"
 number = 57
-lines = "211211"
+lines = [2,1,1,2,1,1]
 name = "The Gentle (Penetrating, Wind)"
 pinyin = "xùn"
 preface = """
@@ -7669,7 +7669,7 @@ personal domain of darkness would only bring harm.
 [[hexagram]]
 utf = "䷹"
 number = 58
-lines = "112112"
+lines = [1,1,2,1,1,2]
 name = "The Joyous, Lake"
 pinyin = "duì"
 preface = """
@@ -7785,7 +7785,7 @@ depends upon chance and external influences.
 [[hexagram]]
 utf = "䷺"
 number = 59
-lines = "212211"
+lines = [2,1,2,2,1,1]
 name = "Dispersion (Dissolution)"
 pinyin = "huàn"
 preface = """
@@ -7918,7 +7918,7 @@ that is already upon them. In this way he does what is right.
 [[hexagram]]
 utf = "䷻"
 number = 60
-lines = "112212"
+lines = [1,1,2,2,1,2]
 name = "Limitation"
 pinyin = "jié"
 preface = """
@@ -8052,7 +8052,7 @@ which otherwise would succumb to irresolution and temptation.
 [[hexagram]]
 utf = "䷼"
 number = 61
-lines = "112211"
+lines = [1,1,2,2,1,1]
 name = "Inner Truth"
 pinyin = "zhōng fú"
 preface = """
@@ -8215,7 +8215,7 @@ now and then, but if persisted in, it will have bad consequences.
 [[hexagram]]
 utf = "䷽"
 number = 62
-lines = "221122"
+lines = [2,2,1,1,2,2]
 name = "Preponderance of the Small"
 pinyin = "xiǎo guò"
 preface = """
@@ -8374,7 +8374,7 @@ nature.
 [[hexagram]]
 utf = "䷾"
 number = 63
-lines = "121212"
+lines = [1,2,1,2,1,2]
 name = "After Completion"
 pinyin = "jì jì"
 preface = """
@@ -8535,7 +8535,7 @@ victim to this danger.
 [[hexagram]]
 utf = "䷿"
 number = 64
-lines = "212121"
+lines = [2,1,2,1,2,1]
 name = "Before Completion"
 pinyin = "wèi jì"
 preface = """
@@ -8675,7 +8675,7 @@ book of the future.
 #  [[hexagram]]
 #  utf = ""
 #  number = 1
-#  lines = "000000"
+#  lines = [0,0,0,0,0,0]
 #  name = "test"
 #  pinyin = "pin"
 #  preface = """

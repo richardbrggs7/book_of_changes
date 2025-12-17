@@ -1,3 +1,16 @@
+pub mod gui;
+use gui::ChangesGUI;
+use iced::{
+    Font,
+    Size,
+    window::{
+        Level,
+        Position,
+        Settings,
+        settings::PlatformSpecific
+    }
+};
+
 #[cfg(test)]
 pub mod tests;
 
@@ -14,7 +27,8 @@ use serde::{
 use std::{
     cmp::max,
     cmp::min,
-    fs
+    fs,
+    str
 };
 use term_size::dimensions;
 
@@ -38,13 +52,16 @@ struct Args {
     #[arg(short = 'l', long = "list", default_value_t = false, help = "List all \
             hexagrams")]
     list : bool,
+
+    #[arg(short = 'g', long = "gui", default_value_t = false, help = "Launch GUI")]
+    gui : bool,
 }
 
-#[derive(Deserialize, Serialize)]
-struct Hex {
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+pub struct Hex {
     utf : String,
-    number : u16,
-    lines : String,
+    number : u8,
+    lines : [u8; 6],
     name : String,
     pinyin : String,
     preface : String,
@@ -67,8 +84,99 @@ struct Hex {
 }
 
 #[derive(Deserialize, Serialize)]
-struct Changes {
+pub struct Changes {
     hexagram : Vec<Hex>
+}
+
+impl Changes {
+    pub fn new() -> Self {
+        Changes::default()
+    }
+
+    pub fn new_from(book_str : &str) -> Self {
+        toml::from_str(book_str).unwrap()
+    }
+
+    pub fn find_by_lines(&self, lines : &[u8; 6]) -> Hex {
+        self.hexagram.clone().into_iter().find(|x| x.lines == *lines)
+            .unwrap_or_else(|| panic!("Could not find hexagram matching lines \
+                                       {:?}", lines))
+    }
+
+    pub fn find_by_num(&self, num : u8) -> Hex {
+        self.hexagram.clone().into_iter().find(|x| x.number==num)
+            .unwrap_or_else(|| panic!("Could not find hexagram matching number \
+                                       {}", num))
+    }
+
+    pub fn yarrow() -> u8 {
+        let mut rng = rand::rng();
+        let draw = rng.random_range(1..=16);
+        if draw == 1 {
+            6
+        }
+        else if draw > 1 && draw <= 8 {
+            8
+        }
+        else if draw > 8 && draw <= 11 {
+            9
+        }
+        else if draw > 11 {
+            7
+        }
+        else {
+            0
+        }
+    }
+
+    pub fn make_hex() -> ([u8;6], [u8;6], String) {
+        let mut lines = [1; 6];
+        let mut moving = [0; 6];
+        let mut line : u8;
+        for i in 0..=5 {
+            line = Self::yarrow();
+            if line == 6 {
+                lines[i] = 2;
+                moving[i] = 1;
+            }
+            else if line == 8 {
+                lines[i] = 2;
+                moving[i] = 0;
+            }
+            else if line == 9 {
+                lines[i] = 1;
+                moving[i] = 1;
+            }
+            else {
+                lines[i] = 1;
+                moving[i] = 0;
+            }
+        }
+        let large_hex = Self::make_large_hex(&lines);
+
+        (lines, moving, large_hex)
+    }
+
+    pub fn make_large_hex(lines : &[u8; 6]) -> String {
+        let mut large_hex = String::new();
+        for i in [5, 4, 3, 2, 1, 0].into_iter() {
+            if lines[i] == 1
+            {
+                large_hex.push_str("_________\n");
+            }
+            else {
+                large_hex.push_str("____ ____\n");
+            }
+        }
+        large_hex
+    }
+}
+
+impl std::default::Default for Changes {
+    fn default() -> Self {
+        Self::new_from(&fs::read_to_string("./translations/wilhelm_baynes.toml")
+                          .expect("Could not open wilhelm_baynes.toml"))
+    }
 }
 
 fn print_within(text : &str, size : Option<i16>) {
@@ -130,69 +238,40 @@ fn print_within(text : &str, size : Option<i16>) {
     print!("{new_text}");
 }
 
-fn yarrow() -> u8 {
-    let mut rng = rand::rng();
-    let draw = rng.random_range(1..=16);
-    if draw == 1 {
-        6
-    }
-    else if draw > 1 && draw <= 8 {
-        8
-    }
-    else if draw > 8 && draw <= 11 {
-        9
-    }
-    else if draw > 11 {
-        7
-    }
-    else {
-        0
-    }
-}
-
-fn make_hex() -> (String, String, String) {
-    let mut lines : String = String::new();
-    let mut moving : String = String::new();
-    let mut large_hex : String = String::new();
-    let mut line : u8;
-    for _ in 0..=5 {
-        line = yarrow();
-        if line == 6 {
-            lines.push('2');
-            moving.push('1');
-        }
-        else if line == 8 {
-            lines.push('2');
-            moving.push('0');
-        }
-        else if line == 9 {
-            lines.push('1');
-            moving.push('1');
-        }
-        else {
-            lines.push('1');
-            moving.push('0');
-        }
-    }
-
-    for i in [5, 4, 3, 2, 1, 0].into_iter() {
-        if lines.chars().nth(i).unwrap() == '1'
-        {
-            large_hex.push_str("_________\n");
-        }
-        else {
-            large_hex.push_str("____ ____\n");
-        }
-    }
-    (lines, moving, large_hex)
-}
-
 fn main() {
     let cli = Args::parse();
-    let book_str = fs::read_to_string("./translations/wilhelm_baynes.toml")
-                     .expect("Could not open wilhelm_baynes.toml");
-    let book : Changes = toml::from_str(&book_str).unwrap();
+    if cli.gui {
+        let settings = Settings {
+            size : Size {width : 1500.0, height : 1250.0},
+            maximized : false,
+            fullscreen : false,
+            position : Position::Centered,
+            min_size : Some(Size {width : 500.0, height : 500.0}),
+            max_size : None,
+            visible : true,
+            resizable : true,
+            closeable : true,
+            minimizable : false,
+            decorations : true,
+            transparent : false,
+            blur : false,
+            level : Level::Normal,
+            icon : None,
+            platform_specific : PlatformSpecific::default(),
+            exit_on_close_request : true
+        };
+        let font = Font::with_name("FreeSerif");
+        iced::application(ChangesGUI::default, ChangesGUI::update,
+                          ChangesGUI::view)
+            .window(settings)
+            .default_font(font)
+            .theme(ChangesGUI::theme)
+            .run()
+            .unwrap();
+        return;
+    }
 
+    let book = Changes::new();
     if cli.list {
         for hex in book.hexagram {
             println!("{} {}: {}", hex.utf, hex.number, hex.name);
@@ -200,18 +279,18 @@ fn main() {
         return;
     }
 
-    let moving : String;
+    let moving : [u8; 6];
     let large_hex : String;
     let mut moving_str = String::new();
     let hex = if cli.hex == 0 {
         // Construct the hexagram
-        let lines : String;
-        (lines, moving, large_hex) = make_hex();
+        let lines : [u8; 6];
+        (lines, moving, large_hex) = Changes::make_hex();
 
         // String showing which lines are moving
         for (digit, num) in [(0,"one"), (1,"two"), (2,"three"), (3,"four"),
                              (4,"five"), (5,"six")].into_iter() {
-            if moving.chars().nth(digit).unwrap() == '1' {
+            if moving[digit] == 1 {
                 if !moving_str.is_empty() {
                     moving_str.push_str(", ");
                 }
@@ -223,32 +302,15 @@ fn main() {
         }
 
         // Find it
-        book.hexagram.into_iter().find(|x| x.lines == lines)
-            .unwrap_or_else(|| panic!("Could not find hexagram matching lines \
-                                       {lines}"))
+        book.find_by_lines(&lines)
     }
     else {
-        let temp_hex = book.hexagram.into_iter().find(|x| x.number==cli.hex
-                                                                       .into())
-                           .unwrap_or_else(|| panic!("Could not find hexagram \
-                                                      matching number {}",
-                                                     cli.hex));
-        moving = "111111".to_string();
+        let temp_hex = book.find_by_num(cli.hex.into());
+        moving = [1; 6];
         moving_str = "none".to_string();
-        let mut temp_large_hex : String = Default::default();
-        for i in [5, 4, 3, 2, 1, 0].into_iter() {
-            if temp_hex.lines.chars().nth(i).unwrap() == '1'
-            {
-                temp_large_hex.push_str("_________\n");
-            }
-            else {
-                temp_large_hex.push_str("____ ____\n");
-            }
-        }
-        large_hex = temp_large_hex;
+        large_hex = Changes::make_large_hex(&temp_hex.lines);
         temp_hex
     };
-
 
     // Display info
     println!("Hexagram number {}", hex.number);
@@ -276,9 +338,10 @@ fn main() {
         println!("Moving lines: {moving_str}");
     }
 
+    // Determine which hexagram parts to print as indices of the OPTIONS array
     let mut default = vec![0, 1, 2, 3];
-    for (i, ch) in moving.chars().enumerate() {
-        if ch == '1' {
+    for (i, num) in moving.into_iter().enumerate() {
+        if num == 1 {
             default.push(i + 4);
         }
     }
